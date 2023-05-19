@@ -2,13 +2,8 @@
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
-  const hbd = document.getElementsByClassName("wish-hbd")[0];
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
-    .split("")
-    .join("</span><span>")}</span`;
-
-  hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
     .join("</span><span>")}</span`;
 
@@ -100,12 +95,12 @@ const animationTimeline = () => {
       },
       "+=0.7"
     )
-    .from(".idea-1", 0.7, ideaTextTrans)
+    .from(".idea-1", 1, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-2", 0.7, ideaTextTrans)
     .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
-    .from(".idea-3", 0.7, ideaTextTrans)
-    .to(".idea-3 strong", 0.5, {
+    .from(".idea-3", 1, ideaTextTrans)
+    .to(".idea-3 strong", 1, {
       scale: 1.2,
       x: 10,
       backgroundColor: "rgb(21, 161, 237)",
@@ -170,7 +165,7 @@ const animationTimeline = () => {
     )
     .staggerFromTo(
       ".baloons img",
-      2.5,
+      3.5,
       {
         opacity: 0.9,
         y: 1400,
@@ -182,7 +177,7 @@ const animationTimeline = () => {
       0.2
     )
     .from(
-      ".girl-dp",
+      ".us",
       0.5,
       {
         scale: 3.5,
@@ -200,33 +195,24 @@ const animationTimeline = () => {
       opacity: 0,
     })
     .staggerFrom(
-      ".wish-hbd span",
+      ".wish-hbd",
       0.7,
       {
         opacity: 0,
-        y: -50,
         // scale: 0.3,
-        rotation: 150,
-        skewX: "30deg",
-        ease: Elastic.easeOut.config(1, 0.5),
       },
       0.1
     )
     .staggerFromTo(
-      ".wish-hbd span",
+      ".wish-hbd",
       0.7,
       {
-        scale: 1.4,
-        rotationY: 150,
+        scale: 1,
       },
       {
-        scale: 1,
-        rotationY: 0,
-        color: "#ff69b4",
-        ease: Expo.easeOut,
+        color: "#8f46bd",
       },
-      0.1,
-      "party"
+      0.1
     )
     .from(
       ".wish h5",
@@ -234,7 +220,6 @@ const animationTimeline = () => {
       {
         opacity: 0,
         y: 10,
-        skewX: "-15deg",
       },
       "party"
     )
